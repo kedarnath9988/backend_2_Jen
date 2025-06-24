@@ -3,8 +3,8 @@ pipeline{
         label 'AGENT-01'
     }
     options {
-        timeout(time: 30, units: 'MINUTES')
-        diableconcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
+        disableConcurrentBuilds()
     }
 
     stages{
@@ -38,8 +38,8 @@ pipeline{
         success {
             echo 'pipeline is successfully exuited '
         }
-        failed {
-            echo 'pipeline files please check once '
+        failure {
+            echo 'pipeline is excuiation failed '
         }
     }
 }

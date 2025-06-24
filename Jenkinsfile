@@ -25,7 +25,6 @@ pipeline{
         stage('install dependencies '){
             steps{
                 sh"""
-               
                 npm install 
                 ls -ltr 
                 echo $appversion
@@ -33,11 +32,19 @@ pipeline{
                   }
         }  
 
+        stage('Artifact'){
+            steps{
+                sh {
+                
+                }
+            }
+        }
+
     }
     post {
         always{
             echo 'i will run always '
-            deleteDir()
+           // deleteDir()
         }
         success {
             echo 'pipeline is successfully exuited '

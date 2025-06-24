@@ -20,6 +20,7 @@ pipeline{
     post {
         always{
             echo 'i will reun always '
+            deleteDir()
         }
         success {
             echo 'pipeline is successfully exuited '

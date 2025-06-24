@@ -5,13 +5,14 @@ pipeline{
     options {
         timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
+        ansiColor('xterm')
     }
 
     stages{
-        stage('build'){
+        stage('install dependencies '){
             steps{
                 sh"""
-                ls -ltr 
+               
                 npm install 
                 """
                   }
@@ -20,7 +21,7 @@ pipeline{
     }
     post {
         always{
-            echo 'i will reun always '
+            echo 'i will run always '
             deleteDir()
         }
         success {

@@ -32,15 +32,8 @@ pipeline{
                   }
         }  
 
-        stage('Artifact'){
-            steps{
-                sh {
-                
-                }
-            }
-        }
-
-    }
+    
+}
     post {
         always{
             echo 'i will run always '
